@@ -21,6 +21,9 @@ class ChatsController < ApplicationController
   end
 
   def destroy
+    @chat = Chat.find(params[:id])
+    @chat.destroy
+    redirect_to chats_path, notice: "ツイートを削除しました"
   end
 
   def new
