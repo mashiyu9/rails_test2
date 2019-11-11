@@ -22,12 +22,22 @@ class ChatsController < ApplicationController
   end
 
   def edit
+    @chat = Chat.find(params[:id])
   end
 
   def destroy
     @chat = Chat.find(params[:id])
     @chat.destroy
     redirect_to chats_path, notice: "ツイートを削除しました"
+  end
+
+  def update
+    @chat = Chat.find(params[:id])
+    if @chat.update(chat_params)
+      redirect_to chats_path, notice: "つぶやきを編集しました"
+    else
+      render :edit
+    end
   end
 
   def new
