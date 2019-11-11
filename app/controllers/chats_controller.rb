@@ -30,6 +30,9 @@ class ChatsController < ApplicationController
     @chat = Chat.new
   end
 
+  def confirm
+  end
+
   private
   def chat_params
     params.require(:chat).permit(:content)

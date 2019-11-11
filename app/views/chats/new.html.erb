@@ -1,4 +1,12 @@
 <%= form_with(model: @chat, local: true, url: chats_path) do |form| %>
+  <% if @chat.errors.any? %>
+    <h2><%= @chat.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @chat.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
   <div>
     <%= form.label :content %>
     <%= form.text_field :content %>
