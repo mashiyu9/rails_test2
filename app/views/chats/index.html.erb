@@ -6,7 +6,6 @@
 <% @chats.each do |chat| %>
 
 <p><%= chat.content %></p>
-<p><%= link_to "詳細を確認する", chat_path(chat.id) %></p>
 <p><%= link_to "編集する", edit_chat_path(chat.id) %></p>
 <p><%= link_to "削除する", chat_path(chat.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></p>
 
