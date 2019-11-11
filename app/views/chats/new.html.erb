@@ -1,0 +1,11 @@
+<%= form_with(model: @chat, local: true, url: chats_path) do |form| %>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+<%= link_to("一覧に戻る", chats_path) %>
+
