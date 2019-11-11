@@ -1,11 +1,12 @@
 class ChatsController < ApplicationController
 
+  before_action :set_chat, only: [:show, :edit, :update, :destroy]
+
   def index
     @chats = Chat.all
   end
 
   def create
-    # binding.pry
     @chat = Chat.new(chat_params)
     if params[:back]
       render :new
@@ -22,17 +23,14 @@ class ChatsController < ApplicationController
   end
 
   def edit
-    @chat = Chat.find(params[:id])
   end
 
   def destroy
-    @chat = Chat.find(params[:id])
     @chat.destroy
     redirect_to chats_path, notice: "ツイートを削除しました"
   end
 
   def update
-    @chat = Chat.find(params[:id])
     if @chat.update(chat_params)
       redirect_to chats_path, notice: "つぶやきを編集しました"
     else
@@ -50,8 +48,13 @@ class ChatsController < ApplicationController
   end
 
   private
+
   def chat_params
     params.require(:chat).permit(:content)
+  end
+
+  def set_chat
+    @chat = Chat.find(params[:id])
   end
 
 end
