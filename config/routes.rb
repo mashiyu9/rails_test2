@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :chats do
 
     collection do
+     patch :confirm
      post :confirm
     end
   end

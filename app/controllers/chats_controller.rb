@@ -7,10 +7,14 @@ class ChatsController < ApplicationController
   def create
     # binding.pry
     @chat = Chat.new(chat_params)
-    if @chat.save
-      redirect_to chats_path, notice: "つぶやきました"
+    if params[:back]
+      render :new
     else
-      render "new"
+      if @chat.save
+        redirect_to chats_path, notice: "つぶやきました"
+      else
+        render "new"
+      end
     end
   end
 
@@ -31,6 +35,8 @@ class ChatsController < ApplicationController
   end
 
   def confirm
+    @chat = Chat.new(chat_params)
+    render :new if @chat.invalid?
   end
 
   private
