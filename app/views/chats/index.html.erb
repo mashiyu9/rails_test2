@@ -1,15 +1,18 @@
-<h1>twitterクローン</h1>
+<%= render partial: "header" %>
 
-<p><%= notice %></p> 
+  <div class= "alert alert-index">
+    <p><%= notice %></p> 
+  </div>
 
+  <% @chats.each do |chat| %>
+    <p><%= chat.content %></p>
+    <p class="tes">
+      testtest
+    </p>
+    <p><%= link_to "編集する", edit_chat_path(chat.id) %></p>
+    <p><%= link_to "削除する", chat_path(chat.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></p>
+  <% end %>
 
-<% @chats.each do |chat| %>
+  <%= link_to("つぶやく", new_chat_path) %>
 
-<p><%= chat.content %></p>
-<p><%= link_to "編集する", edit_chat_path(chat.id) %></p>
-<p><%= link_to "削除する", chat_path(chat.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></p>
-
-<% end %>
-
-
-<%= link_to("つぶやく", new_chat_path) %>
+<%= render partial: "footer" %>

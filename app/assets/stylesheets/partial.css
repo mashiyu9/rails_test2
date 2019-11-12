@@ -1,0 +1,39 @@
+body{
+  margin: 0;
+}
+
+.wrap{
+  width: 720px;
+  min-height: 500px;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.center{
+  margin: 0 auto;
+}
+
+header{
+  width: 100%;
+  background-color: #888;
+  padding: 20px;
+}
+
+.layout-header{
+  width: 720px;
+}
+
+footer{
+  width: 100%;
+  background-color: #888;
+  padding: 20px;
+}
+
+.layout-footer{
+  width: 720px;
+}
+

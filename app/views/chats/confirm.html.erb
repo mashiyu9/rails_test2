@@ -1,3 +1,4 @@
+<%= render partial: "header" %>
 <h3>以下の内容で、つぶやく</h3>
 
 <%= form_with(model: @chat, url: chats_path,local: true ) do |form| %>
@@ -6,7 +7,4 @@
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: "back" %>
 <% end %>
-
-
-
-<h1>てすとおおおおおおおお</h1>
+<%= render partial: "footer" %>
