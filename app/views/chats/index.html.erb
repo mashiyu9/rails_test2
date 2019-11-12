@@ -4,18 +4,14 @@
     <p><%= notice %></p> 
   </div>
 
-  <% @chats.each do |chat| %>
-    <p><%= chat.content %></p>
-    <p class="test">
-      jQueryテスト
-    </p>
-    <p><%= link_to "編集する", edit_chat_path(chat.id) %></p>
-    <p><%= link_to "削除する", chat_path(chat.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></p>
+  <% @chats.reverse.each do |chat| %>
+  <div class="chat-wrap clearfix">
+    <p class="content float-left"><%= chat.content %></p>
+    <div class="content-edit float-right">
+      <p><%= link_to "編集する", edit_chat_path(chat.id) %></p>
+      <p><%= link_to "削除する", chat_path(chat.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></p>
+    </div>
+  </div>
   <% end %>
   <%= link_to("つぶやく", new_chat_path) %>
-  <h3>test</h3>
-<!-- <script>
-      $(".test").css("color","red")
-  </script>
- -->
 <%= render partial: "footer" %>

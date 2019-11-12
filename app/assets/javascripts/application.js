@@ -16,9 +16,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
-
-// $(document).ready(function() {
-//   $(".test").css("color","red")
-//   console.log('hello')
-// });

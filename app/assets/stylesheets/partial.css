@@ -17,6 +17,14 @@ body{
   margin: 0 auto;
 }
 
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
 header{
   width: 100%;
   background-color: #888;
@@ -31,6 +39,7 @@ footer{
   width: 100%;
   background-color: #888;
   padding: 20px;
+  margin-top: 30px;
 }
 
 .layout-footer{
