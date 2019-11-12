@@ -7,6 +7,7 @@ body{
   min-height: 500px;
 }
 
+
 .clearfix:after {
   content: "";
   display: block;
@@ -39,10 +40,42 @@ footer{
   width: 100%;
   background-color: #888;
   padding: 20px;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .layout-footer{
   width: 720px;
+}
+@media (max-width: 720px) {
+  .wrap{
+    width: 400px;
+  }
+  .content{
+    width: 300px;
+    padding: 0 10px;
+  }
+  .layout-header{
+    width: 300px;
+  }
+  .layout-footer{
+    width: 300px;
+  }
+}
+@media (max-width: 420px) {
+  .wrap{
+    width: 100%;
+  }
+  .content{
+    width: 100%;
+  }
+  .float-right{
+    float: none;
+  }
+  .layout-header{
+    width: 100%;
+  }
+  .layout-footer{
+    width: 100%;
+  }
 }
 
